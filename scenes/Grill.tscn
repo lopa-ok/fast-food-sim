@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://g1xx4"]
+
+[ext_resource type="Script" path="res://scripts/grill.gd" id="1_grill"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gr"]
+size = Vector3(1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gr"]
+size = Vector3(1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_patty"]
+size = Vector3(0.6, 0.1, 0.6)
+
+[node name="Grill" type="StaticBody3D"]
+script = ExtResource("1_grill")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_gr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_gr")
+
+[node name="Visual" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+visible = false
+mesh = SubResource("BoxMesh_patty")
