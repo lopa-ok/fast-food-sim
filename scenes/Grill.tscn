@@ -1,12 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://g1xx4"]
 
-[ext_resource type="Script" path="res://scripts/grill.gd" id="1_grill"]
+[ext_resource type="Script" uid="uid://hta7q1ijdyrw" path="res://scripts/grill.gd" id="1_grill"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gr"]
-size = Vector3(1, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gr"]
-size = Vector3(1, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_patty"]
 size = Vector3(0.6, 0.1, 0.6)

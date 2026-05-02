@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1xx3_bun"]
+
+[ext_resource type="Script" path="res://scripts/counter.gd" id="1_ctr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ct"]
+size = Vector3(2, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ct"]
+size = Vector3(2, 1, 1)
+
+[node name="BunDispenser" type="StaticBody3D"]
+script = ExtResource("1_ctr")
+dispenses_item = "Bun"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ct")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ct")

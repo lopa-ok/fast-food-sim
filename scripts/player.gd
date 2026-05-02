@@ -19,9 +19,6 @@ func _input(event):
 		rotate_y(-event.relative.x * 0.005)
 		camera.rotate_x(-event.relative.y * 0.005)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
-	
-	if Input.is_action_just_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -43,17 +40,17 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func give_item(item_scene: PackedScene, item_name: String):
+func give_item(item_scene: PackedScene, item_id: String):
 	if held_item != null: return false
 	var item = item_scene.instantiate() as Item
-	item.item_name = item_name
+	item.item_id = item_id
 	hold_point.add_child(item)
 	held_item = item
 	return true
 
 func take_item() -> String:
 	if held_item == null: return ""
-	var n = held_item.item_name
+	var id = held_item.item_id
 	held_item.queue_free()
 	held_item = null
-	return n
+	return id

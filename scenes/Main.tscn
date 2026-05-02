@@ -1,9 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://m1xx6"]
+[gd_scene load_steps=16 format=3 uid="uid://m1xx6"]
 
 [ext_resource type="Script" uid="uid://bgappep3bsqg" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="PackedScene" uid="uid://dxp8m2b1" path="res://scenes/Player.tscn" id="2_player"]
 [ext_resource type="PackedScene" uid="uid://c1xx3" path="res://scenes/Counter.tscn" id="3_counter"]
 [ext_resource type="PackedScene" uid="uid://g1xx4" path="res://scenes/Grill.tscn" id="4_grill"]
+[ext_resource type="PackedScene" path="res://scenes/AssemblyStation.tscn" id="5_ass"]
+[ext_resource type="PackedScene" path="res://scenes/BunDispenser.tscn" id="6_bun"]
+[ext_resource type="PackedScene" uid="uid://k13k34ahrqkt" path="res://scenes/Trashbin.tscn" id="7_trash"]
+[ext_resource type="PackedScene" path="res://scenes/PauseMenu.tscn" id="8_pause"]
+[ext_resource type="PackedScene" uid="uid://c87bu15vwh4d2" path="res://scenes/fries_station.tscn" id="8_q8u5g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m1"]
 
@@ -55,7 +60,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0282612, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -2)
 
 [node name="Grill" parent="." instance=ExtResource("4_grill")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.005247, 0.5, -2)
+
+[node name="AssemblyStation" parent="." instance=ExtResource("5_ass")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -5.0060253)
+
+[node name="PotatoDispenser" parent="." instance=ExtResource("6_bun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.882613, 0.44729424, -4.832822)
+dispenses_item = "Potatoes"
+
+[node name="BunDispenser" parent="." instance=ExtResource("6_bun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.943586, 0.5, -2)
+
+[node name="Trashbin" parent="." instance=ExtResource("7_trash")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, -5)
+
+[node name="FriesStation" parent="." instance=ExtResource("8_q8u5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.993761, 0.047760844, -5.193658)
 
 [node name="SpawnPoint" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
@@ -93,3 +114,5 @@ offset_right = 2.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PauseMenu" parent="." instance=ExtResource("8_pause")]
