@@ -23,6 +23,17 @@ RecipeManager="*res://scripts/recipe_manager.gd"
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://scenes/": "red",
+"res://scripts/": "orange"
+}
+
+[global_group]
+
+tables=""
+
 [input]
 
 move_forward={

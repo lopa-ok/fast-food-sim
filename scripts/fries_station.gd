@@ -20,15 +20,14 @@ func _process(delta):
 		cook_timer += delta
 		if cook_timer >= cook_time:
 			is_cooked = true
-			update_color(Color(0.8, 0.7, 0.2)) # golden fries color
-
+			update_color(Color(0.8, 0.7, 0.2))
 func interact(player):
 	if not has_potatoes and player.held_item != null and player.held_item.item_id == "Potatoes":
 		has_potatoes = true
 		is_cooked = false
 		cook_timer = 0.0
-		update_color(Color(0.9, 0.9, 0.8)) # raw potato color
-		player.take_item() # using the correct player method
+		update_color(Color(0.9, 0.9, 0.8))
+		player.take_item()
 	elif has_potatoes and is_cooked and player.held_item == null:
 		has_potatoes = false
 		visual.visible = false
