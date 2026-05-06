@@ -36,12 +36,16 @@ func _spawn_customer():
 func _update_queue():
 	for i in range(ordering_customers.size()):
 		var cust = ordering_customers[i]
-		var target = counter_point.global_position + Vector3(i * 2.0, 0, 0)
+		var target = counter_point.global_position
+		if counter_point.get_child_count() > i:
+			target = counter_point.get_child(i).global_position
 		cust.set_target(target)
-		
+	
 	for i in range(waiting_for_food_customers.size()):
 		var cust = waiting_for_food_customers[i]
-		var target = delivery_point.global_position + Vector3(i * 2.0, 0, 0)
+		var target = delivery_point.global_position
+		if delivery_point.get_child_count() > i:
+			target = delivery_point.get_child(i).global_position
 		cust.set_target(target)
 
 func _on_order_placed(cust):

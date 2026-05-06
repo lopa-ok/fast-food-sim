@@ -323,30 +323,30 @@ shadow_mesh = SubResource("ArrayMesh_73f62")
 [node name="Item" type="Node3D"]
 script = ExtResource("1_item")
 
-[node name="Burger" type="MeshInstance3D" parent="."]
+[node name="BurgerModel" type="MeshInstance3D" parent="."]
 transform = Transform3D(82.33, 0, 0, 0, 82.33, 0, 0, 0, 82.33, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_va81k")
 mesh = SubResource("ArrayMesh_cvskn")
 skeleton = NodePath("")
 
-[node name="CookedMeat" type="MeshInstance3D" parent="."]
+[node name="CookedMeatModel" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_h0yph")
 skeleton = NodePath("")
 
-[node name="RawMeat" type="MeshInstance3D" parent="."]
+[node name="RawMeatModel" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_h0yph")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_e0dfn")
 
-[node name="Bun" type="MeshInstance3D" parent="."]
+[node name="BunModel" type="MeshInstance3D" parent="."]
 
-[node name="UpperBun" type="MeshInstance3D" parent="Bun"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -6.6900255e-05, 0, 1.7568043e-05)
+[node name="UpperBun" type="MeshInstance3D" parent="BunModel"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -6.6900255e-05, 0.17117602, 1.7568043e-05)
 mesh = SubResource("ArrayMesh_owx14")
 skeleton = NodePath("")
 
-[node name="LowerBun" type="MeshInstance3D" parent="Bun"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+[node name="LowerBun" type="MeshInstance3D" parent="BunModel"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.0064423606, 0, -0.0017440021)
 mesh = SubResource("ArrayMesh_o2nf1")
 skeleton = NodePath("")
 
