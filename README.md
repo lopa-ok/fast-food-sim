@@ -2,7 +2,11 @@
 
 A fast food simulator built in Godot where you take on every role in the restaurant: cook, cashier, and manager all at once. Take customer orders, prepare the food, and keep the line moving before the customers get angry an leave
 
+# Current working game loop
 
+* Interact with customers to see what they want.
+* For burgers: grab raw beef, cook it, then take a bun and place it on the counter. Once the beef is done cooking, interact with the bun on the counter to assemble the burger. (More ingredients/features coming later.)
+* For fries: use the white box (still a wip) in the middle of the kitchen to get raw fries, then cook them in the fryer.
 
 ## 🛠️ Installation
 
